@@ -47,16 +47,20 @@
 
   var menuList = document.getElementById("menuList");
 
-  menuList.style.maxHeight = "0px";
-
   function togglemenu(){
-      
-      if(menuList.style.maxHeight == "0px")
-      {
-          menuList.style.maxHeight = "130px";
-      } else {
-          menuList.style.maxHeight = "0px";
-      }
+      /**
+       * The `Element.classList` is a read-only property that returns a
+       * live DOMTokenList collection of the class attributes of the 
+       * element. This can then be used to manipulate the class list.
+       * 
+       * The `toggle()` method removes an existing token from the list
+       * and returns false. If the token doesn't exist it's added 
+       * and the function returns true.
+       * 
+       * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+       * @see https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle
+       **/
+      menuList.classList.toggle('collapsed')
   }
 
 </script>
